@@ -1,6 +1,7 @@
 import { Text, View } from '@/src/components/Themed';
 import products from '@/assets/data/products';
 import ProductListItem from '@/src/components/ProductListItem';
+import { FlatList } from 'react-native';
 
 
 
@@ -8,9 +9,15 @@ import ProductListItem from '@/src/components/ProductListItem';
 export default function MenuScreen() {
   return (
     <View>
-      <Text>Start</Text>
-      {products.map((productItem) => (<ProductListItem key={productItem.id} product={productItem} />))
-      }
+      <Text>Stasaasrt</Text>
+
+      <FlatList data={products}
+        renderItem={({ item }) => <ProductListItem product={item} />}
+        numColumns={2}
+        contentContainerStyle={{gap:10, padding:15}}
+        columnWrapperStyle={{gap:10}}
+      />
+
     </View>
   );
 }
